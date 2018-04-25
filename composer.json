@@ -1,0 +1,41 @@
+{
+  "name": "nullref/yii2-documents",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "nullref/yii2-core": ">=0.0.3",
+    "nullref/yii2-useful": ">=0.0.3",
+    "rmrevin/yii2-fontawesome": ">=2.16.0",
+    "yiisoft/yii2": ">=2.0.13",
+    "yiisoft/yii2-queue": ">=2.0.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "*"
+  },
+  "suggest": {
+    "phpoffice/phpspreadsheet": "Need for Spreadsheet"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "nullref\\documents\\": "src/"
+    }
+  },
+  "extra": {
+    "bootstrap": "nullref\\documents\\Bootstrap"
+  }
+}
