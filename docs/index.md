@@ -3,8 +3,8 @@ Workers
 
 All workers should extends from base worker classes:
 
-    - \nullref\documents\components\BaseExporter.
-    - \nullref\documents\components\BaseImporter.
+    - \nullref\documents\components\BaseExporter
+    - \nullref\documents\components\BaseImporter
 
 And need to implements appropriate abstract methods, e.g., `getName()` method to define worker name.
 
@@ -41,8 +41,6 @@ In worker code all options values will be able by `getOptionValue()` method.
 ```php
 $catalogId = $this->getOptionValue($document, 'catalog');
 ```
-
-
 
 
 Usage
