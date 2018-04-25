@@ -66,3 +66,5 @@ After that I could add document based on this worker instance:
 
 On document/create form you will be able to set values for options that was defined in `getDocumentOptions()` method.
 
+
+![Documents Import](https://raw.githubusercontent.com/NullRefExcep/yii2-documents/master/docs/images/document-create.png)
