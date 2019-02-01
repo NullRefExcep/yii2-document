@@ -97,7 +97,7 @@ After creating document worker you need register it in module config:
 Usage
 -----
 
-Please, check [docs](https://github.com/NullRefExcep/yii2-documents/blob/master/docs/index.md) for more info.
+Please, check [docs](https://github.com/NullRefExcep/yii2-documents/blob/master/docs/index.md) and [demo](https://github.com/NullRefExcep/yii2-documents/tree/master/demo) for more info.
 
 Customization
 -------------
