@@ -66,11 +66,10 @@ class DocumentConfig extends ActiveRecord
      */
     public function attributeHints()
     {
-        //@TODO move to i18n
         return [
-            'columns' => 'Исходные колонки могут быть указаны буквенным названием '
-                . '("A", "E" и т.д. ) или номером колонки. Для склеивания нескольких исходных колонок в одну '
-                . 'записывайте их через запятую.'
+            'columns' =>
+                Yii::t('documents', 'Columns are being set up by alphabetic names("A","B", etc.) or by numbers') .
+                Yii::t('documents', 'To glue several columns into one value write their coords separated by commas'),
         ];
     }
 
