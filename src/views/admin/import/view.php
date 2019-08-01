@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->getStatusReadable();
                 }
             ],
-            'file_path',
             'config_id',
             'created_at:datetime',
             'updated_at:datetime',

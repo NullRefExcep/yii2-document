@@ -40,6 +40,9 @@ class Form
             case Worker::OPTION_TYPE_DROPDOWN:
                 $field->dropDownList(ArrayHelper::remove($config, 'items', []), $config);
                 break;
+            case Worker::OPTION_TYPE_FILE:
+                $field->fileInput($config);
+                break;
             default:
                 throw new InvalidConfigException('Importer option should have type');
         }

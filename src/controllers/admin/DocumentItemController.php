@@ -3,12 +3,9 @@
 namespace nullref\documents\controllers\admin;
 
 use nullref\core\interfaces\IAdminController;
-use nullref\documents\components\Binder;
 use nullref\documents\models\Document;
 use nullref\documents\models\DocumentItem;
 use nullref\documents\models\DocumentItemSearch;
-use nullref\documents\models\forms\CreateProductWhileBindingForm;
-use nullref\documents\models\VariantBindSearch;
 use Yii;
 use yii\db\ActiveQuery;
 use yii\filters\VerbFilter;
@@ -167,44 +164,4 @@ class DocumentItemController extends Controller implements IAdminController
         return $this->redirect(['index', 'id' => $doc_id]);
     }
 
-    /**
-     * @param $document_item_id
-     * @param $variant_id
-     * @return \yii\web\Response
-     */
-    public function actionBind($document_item_id, $variant_id)
-    {
-        Binder::bindById($document_item_id, $variant_id);
-
-        return $this->redirect(['index', 'id' => $this->getDocumentId($document_item_id)]);
-    }
-
-    public function actionCreateProduct($documentItemIds)
-    {
-        $documentItemIds = explode(',', $documentItemIds);
-        $model = new CreateProductWhileBindingForm(compact('documentItemIds'));
-        $post = Yii::$app->request->post();
-        if ($model->load($post) && $model->createProductWithMultipleVariants()) {
-            Yii::$app->session->setFlash('success', Yii::t('documents', 'Product was saved successfully'));
-        } else {
-            if ($model->hasErrors()) {
-                $message = Html::errorSummary($model);
-            } else {
-                $message = Yii::t('documents', 'Cannot create product');
-            }
-            Yii::$app->session->setFlash('error', $message);
-        }
-
-        return $this->redirect(['index', 'id' => $model->getDocumentId()]);
-    }
-
-    public function actionRenderProductForm($documentItemIds)
-    {
-        $documentItemIds = explode(',', $documentItemIds);
-        $model = new CreateProductWhileBindingForm(compact('documentItemIds'));
-        Yii::$app->response->format = Response::FORMAT_RAW;
-        return $this->renderPartial('_create_product_form', [
-            'model' => $model,
-        ]);
-    }
 }

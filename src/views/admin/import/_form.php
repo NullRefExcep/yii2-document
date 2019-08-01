@@ -22,7 +22,6 @@ use yii\widgets\ActiveForm;
         <div class="col-md-12">
             <?php if ($model->configId): ?>
                 <?= $this->render('_options', ['form' => $form, 'model' => $model]) ?>
-                <?= $form->field($model, 'file')->fileInput() ?>
             <?php else: ?>
                 <?= $this->render('_config', ['form' => $form, 'model' => $model]) ?>
             <?php endif ?>
